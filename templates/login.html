@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Kolkata Metro</title>
+  <style>
+    /* ===== BASE STYLES ===== */
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* Critical background image setup */
+      background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                  url('metro-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #2d3748;
+      line-height: 1.6;
+      position: relative;
+    }
+
+    /* ===== LOGIN CARD ===== */
+    .login-container {
+      width: 100%;
+      max-width: 400px;
+      padding: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .login-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 
+                  0 10px 10px -5px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .login-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+    }
+
+    /*FORM ELEMENTS*/
+    .login-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #2d3748;
+    }
+
+    .login-header h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 0 0 0.5rem 0;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #4a5568;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      font-size: 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      background-color: rgba(248, 250, 252, 0.8);
+      transition: all 0.3s ease;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #00b4db;
+      box-shadow: 0 0 0 3px rgba(0, 180, 219, 0.2);
+      background-color: white;
+    }
+
+    .error-message {
+      color: #e53e3e;
+      text-align: center;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 1rem;
+      background:gray;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .login-btn:hover {
+      background: black;
+      transform: translateY(-2px);
+    }
+
+    /* ===== FOOTER ===== */
+    .login-footer {
+      text-align: center;
+      margin-top: 1.5rem;
+      color: white;
+      font-weight: 500;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    .login-footer a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .login-footer a:hover {
+      text-decoration: underline;
+    }
+
+    /*RESPONSIVE*/
+    @media (max-width: 480px) {
+      .login-card {
+        padding: 1.5rem;
+      }
+      
+      .login-header h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* ===== IMAGE FALLBACK ===== */
+    @media (max-width: 768px) {
+      body {
+        background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <div class="login-header">
+        <h2>🔐 Login</h2>
+      </div>
+
+      {% if error %}
+        <p class="error-message">{{ error }}</p>
+      {% endif %}
+
+      <form method="post">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+
+        <button type="submit" class="login-btn">Login</button>
+      </form>
+
+      <p class="login-footer">
+        New user? <a href="/register">Register here</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Fallback JavaScript -->
+  <script>
+    // Check if background image loaded successfully
+    document.addEventListener('DOMContentLoaded', function() {
+      const img = new Image();
+      img.src = 'login.jpg';
+      img.onerror = function() {
+        document.body.style.background = "linear-gradient(135deg, #00b4db 0%, #0083b0 100%)";
+        console.log("Using fallback gradient - image not found");
+      };
+    });
+  </script>
+</body>
+</html>

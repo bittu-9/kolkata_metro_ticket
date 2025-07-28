@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Metro Ticket</title>
+  <style>
+    /* Base styles */
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #4776E6 0%, #8E54E9 100%);
+      color: #2d3748;
+      line-height: 1.6;
+    }
+
+    /* Ticket container */
+    .ticket-container {
+      background: white;
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+                  0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .ticket-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Heading */
+    .ticket-container h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 0 0 1.5rem 0;
+      color: #2d3748;
+    }
+
+    /* Ticket grid */
+    .ticket-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .ticket-item {
+      background: #f8fafc;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: left;
+    }
+
+    .ticket-item strong {
+      display: block;
+      font-size: 0.9rem;
+      color: #4a5568;
+      margin-bottom: 0.25rem;
+    }
+
+    .ticket-item span {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    /* QR Code */
+    .qr-code {
+      width: 180px;
+      height: 180px;
+      margin: 1.5rem auto;
+      display: block;
+      border: 1px solid #e2e8f0;
+      padding: 10px;
+      background: white;
+    }
+
+    /* Back link */
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 1.5rem;
+      color: #2b7ae0;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+      .ticket-container {
+        padding: 1.5rem;
+      }
+      
+      .ticket-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      
+      .qr-code {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="ticket-container">
+    <h2>Kolkata Metro Ticket</h2>
+    
+    <div class="ticket-grid">
+      <div class="ticket-item">
+        <strong>Ticket ID</strong>
+        <span>{{ ticket.ticket_id }}</span>
+      </div>
+      <div class="ticket-item">
+        <strong>From Station</strong>
+        <span>{{ ticket.from }}</span>
+      </div>
+      <div class="ticket-item">
+        <strong>To Station</strong>
+        <span>{{ ticket.to }}</span>
+      </div>
+      <div class="ticket-item">
+        <strong>Fare</strong>
+        <span>{{ ticket.fare }}</span>
+      </div>
+      <div class="ticket-item">
+        <strong>Payment Method</strong>
+        <span>{{ ticket.payment_method }}</span>
+      </div>
+      <div class="ticket-item">
+        <strong>Date</strong>
+        <span>{{ ticket.date }}</span>
+      </div>
+    </div>
+
+    <img class="qr-code" src="{{ ticket.qr_path }}" alt="QR Code">
+
+    <a href="/" class="back-link">← Back to Home</a>
+  </div>
+</body>
+</html>

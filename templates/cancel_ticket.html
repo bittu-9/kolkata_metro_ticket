@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cancel Ticket</title>
+  <style>
+    /* Base styles */
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #2d3748;
+      line-height: 1.6;
+    }
+
+    /* Main container */
+    .cancel-container {
+      width: 100%;
+      max-width: 800px;
+      padding: 2rem;
+    }
+
+    /* Card styling */
+    .cancel-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+                  0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cancel-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Heading */
+    .cancel-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #2d3748;
+    }
+
+    .cancel-header h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 0 0 0.5rem 0;
+    }
+
+    /* Table styling */
+    .ticket-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+
+    .ticket-table th {
+      background-color: #f8fafc;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-weight: 600;
+      color: #4a5568;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    .ticket-table td {
+      padding: 1rem;
+      border-bottom: 1px solid #edf2f7;
+      vertical-align: middle;
+    }
+
+    .ticket-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .ticket-table tr:hover td {
+      background-color: #f8fafc;
+    }
+
+    /* Button styling */
+    .cancel-btn {
+      padding: 0.5rem 1rem;
+      background: #e53e3e;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .cancel-btn:hover {
+      background: #c53030;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Empty state */
+    .empty-state {
+      text-align: center;
+      padding: 2rem;
+      color: #718096;
+      font-size: 1.1rem;
+    }
+
+    /* Back link */
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 1.5rem;
+      color: #074ca5;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .cancel-card {
+        padding: 1.5rem;
+      }
+      
+      .ticket-table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="cancel-container">
+    <div class="cancel-card">
+      <div class="cancel-header">
+        <h2>🗑️ Cancel Ticket – {{ user }}</h2>
+      </div>
+
+      {% if bookings %}
+        <table class="ticket-table">
+          <thead>
+            <tr>
+              <th>Ticket ID</th>
+              <th>From</th>
+              <th>To</th>
+              <th>Fare</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for b in bookings %}
+            <tr>
+              <td>{{ b.ticket_id }}</td>
+              <td>{{ b.from }}</td>
+              <td>{{ b.to }}</td>
+              <td>{{ b.fare }}</td>
+              <td>
+                <form method="post" action="/cancel-ticket/{{ b.ticket_id }}" onsubmit="return confirm('Are you sure you want to cancel this ticket?');">
+                  <button type="submit" class="cancel-btn">Cancel</button>
+                </form>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <p class="empty-state">No tickets to cancel.</p>
+      {% endif %}
+
+      <a href="/" class="back-link">← Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>

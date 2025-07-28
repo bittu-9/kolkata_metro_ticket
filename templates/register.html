@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register | Kolkata Metro</title>
+  <style>
+    /* Base styles - Matching login.html */
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);
+      color: #2d3748;
+      line-height: 1.6;
+    }
+
+    /* Main container */
+    .register-container {
+      width: 100%;
+      max-width: 400px;
+      padding: 2rem;
+    }
+
+    /* Card styling - Matching login.html */
+    .register-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+                  0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .register-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Heading */
+    .register-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #2d3748;
+    }
+
+    .register-header h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 0 0 0.5rem 0;
+    }
+
+    /* Form elements */
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #4a5568;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      font-size: 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      background-color: #f8fafc;
+      transition: all 0.3s ease;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #00b4db;
+      box-shadow: 0 0 0 3px rgba(0, 180, 219, 0.2);
+      background-color: white;
+    }
+
+    /* Error message - Matching login.html */
+    .error-message {
+      color: #e53e3e;
+      text-align: center;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    /* Button - Matching login.html */
+    .register-btn {
+      width: 100%;
+      padding: 1rem;
+      background: #00b4db;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .register-btn:hover {
+      background: #0083b0;
+      transform: translateY(-2px);
+    }
+
+    /* Footer link - Matching login.html */
+    .login-footer {
+      text-align: center;
+      margin-top: 1.5rem;
+      color: #f8fafc;
+      font-weight: 500;
+    }
+
+    .login-footer a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .login-footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive adjustments - Matching login.html */
+    @media (max-width: 480px) {
+      .register-card {
+        padding: 1.5rem;
+      }
+      
+      .register-header h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="register-container">
+    <div class="register-card">
+      <div class="register-header">
+        <h2>📝 Register New User</h2>
+      </div>
+
+      {% if error %}
+        <p class="error-message">{{ error }}</p>
+      {% endif %}
+
+      <form method="post">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+
+        <button type="submit" class="register-btn">Register</button>
+      </form>
+
+      <p class="login-footer">
+        Already registered? <a href="/login">Login</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>

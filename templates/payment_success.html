@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment Successful</title>
+  <style>
+    /* Base styles - Matching book.html */
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #2d3748;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    /* Main container */
+    .success-container {
+      width: 100%;
+      max-width: 500px;
+      padding: 2rem;
+    }
+
+    /* Card styling - Matching book.html */
+    .success-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+                  0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .success-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Heading */
+    .success-header {
+      margin-bottom: 1.5rem;
+      color: #2d3748;
+    }
+
+    .success-header h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 0 0 1rem 0;
+    }
+
+    /* Success message */
+    .success-message {
+      font-size: 1.1rem;
+      color: #4a5568;
+      margin-bottom: 2rem;
+    }
+
+    /* Ticket button - Matching book.html button style */
+    .ticket-btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: #667eea;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      margin-top: 1rem;
+    }
+
+    .ticket-btn:hover {
+      background: #5a67d8;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+      .success-card {
+        padding: 1.5rem;
+      }
+      
+      .success-header h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="success-container">
+    <div class="success-card">
+      <div class="success-header">
+        <h2>✅ Payment Successful</h2>
+      </div>
+
+      <p class="success-message">Thank you for your payment!</p>
+
+      <a href="/ticket/{{ ticket_id }}" class="ticket-btn">🎫 View Ticket</a>
+    </div>
+  </div>
+</body>
+</html>

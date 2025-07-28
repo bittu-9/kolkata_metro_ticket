@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Metro Schedule</title>
+  <style>
+    /* Base styles */
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: #2d3748;
+      line-height: 1.6;
+    }
+
+    /* Main container */
+    .schedule-container {
+      width: 100%;
+      max-width: 600px;
+      padding: 2rem;
+    }
+
+    /* Card styling */
+    .schedule-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+                  0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .schedule-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Heading */
+    .schedule-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #2d3748;
+    }
+
+    .schedule-header h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 0 0 0.5rem 0;
+    }
+
+    /* Schedule list */
+    .schedule-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0 0 2rem 0;
+    }
+
+    .schedule-list li {
+      background: #f8fafc;
+      padding: 1rem 1.5rem;
+      margin-bottom: 0.75rem;
+      border-radius: 8px;
+      font-size: 1.05rem;
+      transition: all 0.3s ease;
+    }
+
+    .schedule-list li:hover {
+      background: #edf2f7;
+      transform: translateX(5px);
+    }
+
+    .schedule-list li:last-child {
+      background: #fff4e6;
+      font-weight: 600;
+      color: #d46b08;
+    }
+
+    /* Back link */
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 1.5rem;
+      color: #13488e;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+      .schedule-card {
+        padding: 1.5rem;
+      }
+      
+      .schedule-header h2 {
+        font-size: 1.5rem;
+      }
+      
+      .schedule-list li {
+        padding: 0.875rem 1rem;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="schedule-container">
+    <div class="schedule-card">
+      <div class="schedule-header">
+        <h2>🕒 Metro Schedule</h2>
+      </div>
+
+      <ul class="schedule-list">
+        <li>Dum Dum → Kavi Subhash – Every 10 minutes</li>
+        <li>Salt Lake → Sealdah – Every 15 minutes</li>
+        <li>Last train: 10:00 PM</li>
+      </ul>
+
+      <a href="/" class="back-link">← Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Confirm Payment</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body class="info-page" >
+  <h2>🧾 Confirm Payment</h2>
+  <p><strong>Passenger:</strong> {{ user }}</p>
+  <p><strong>From:</strong> {{ from_station }}</p>
+  <p><strong>To:</strong> {{ to_station }}</p>
+  <p><strong>Fare:</strong> {{ fare }}</p>
+
+  <form action="/payment-success" method="post">
+    <input type="hidden" name="from_station" value="{{ from_station }}">
+    <input type="hidden" name="to_station" value="{{ to_station }}">
+
+    <p><strong>Select Payment Method:</strong></p>
+    <label><input type="radio" name="payment_method" value="UPI" required> UPI</label><br>
+    <label><input type="radio" name="payment_method" value="Credit/Debit Card"> Credit/Debit Card</label><br>
+    <label><input type="radio" name="payment_method" value="Net Banking"> Net Banking</label><br>
+    <label><input type="radio" name="payment_method" value="Metro Card"> Metro Card</label><br><br>
+
+    <button type="submit" class="login-btn">Pay Now</button>
+  </form>
+
+  <a href="/" class="btn-back">← Cancel</a>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Bookings</title>
+  <style>
+    /* Base styles */
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+      color: #2d3748;
+      line-height: 1.6;
+    }
+
+    /* Main container */
+    .bookings-container {
+      width: 100%;
+      max-width: 900px;
+      padding: 2rem;
+    }
+
+    /* Card styling */
+    .bookings-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+                  0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .bookings-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Heading */
+    .bookings-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #2d3748;
+    }
+
+    .bookings-header h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 0 0 0.5rem 0;
+    }
+
+    /* Table styling */
+    .bookings-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+
+    .bookings-table th {
+      background-color: #f8fafc;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-weight: 600;
+      color: #4a5568;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    .bookings-table td {
+      padding: 1rem;
+      border-bottom: 1px solid #edf2f7;
+    }
+
+    .bookings-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .bookings-table tr:hover td {
+      background-color: #f8fafc;
+    }
+
+    /* Empty state */
+    .empty-state {
+      text-align: center;
+      padding: 2rem;
+      color: #718096;
+      font-size: 1.1rem;
+    }
+
+    /* Back link */
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 1.5rem;
+      color: #115ba4;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .bookings-card {
+        padding: 1.5rem;
+      }
+      
+      .bookings-table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bookings-container">
+    <div class="bookings-card">
+      <div class="bookings-header">
+        <h2>📄 My Bookings – {{ user }}</h2>
+      </div>
+
+      {% if bookings %}
+        <table class="bookings-table">
+          <thead>
+            <tr>
+              <th>Ticket ID</th>
+              <th>From Station</th>
+              <th>To Station</th>
+              <th>Fare</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for b in bookings %}
+            <tr>
+              <td>{{ b.ticket_id }}</td>
+              <td>{{ b.from }}</td>
+              <td>{{ b.to }}</td>
+              <td>{{ b.fare }}</td>
+              <td>{{ b.date }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <p class="empty-state">No bookings found.</p>
+      {% endif %}
+
+      <a href="/" class="back-link">← Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>

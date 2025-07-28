@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Customer Support</title>
+  <style>
+    /* Base styles */
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+      color: #2d3748;
+      line-height: 1.6;
+    }
+
+    /* Main container */
+    .support-container {
+      width: 100%;
+      max-width: 600px;
+      padding: 2rem;
+    }
+
+    /* Card styling */
+    .support-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+                  0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .support-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Heading */
+    .support-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #2d3748;
+    }
+
+    .support-header h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 0 0 0.5rem 0;
+    }
+
+    /* Support list */
+    .support-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0 0 2rem 0;
+    }
+
+    .support-list li {
+      background: #f8fafc;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      font-size: 1.05rem;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+    }
+
+    .support-list li strong {
+      min-width: 120px;
+      display: inline-block;
+      color: #4a5568;
+    }
+
+    .support-list li:hover {
+      background: #edf2f7;
+      transform: translateX(5px);
+    }
+
+    /* Back link */
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 1.5rem;
+      color: #f8f9fa;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+      .support-card {
+        padding: 1.5rem;
+      }
+      
+      .support-header h2 {
+        font-size: 1.5rem;
+      }
+      
+      .support-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+      }
+      
+      .support-list li strong {
+        margin-bottom: 0.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="support-container">
+    <div class="support-card">
+      <div class="support-header">
+        <h2>📞 Customer Support</h2>
+      </div>
+
+      <ul class="support-list">
+        <li><strong>Phone:</strong> 1800-111-123</li>
+        <li><strong>Email:</strong> support@kolkatametro.gov.in</li>
+        <li><strong>Working Hours:</strong> 6:00 AM – 10:00 PM</li>
+      </ul>
+
+      <a href="/" class="back-link">← Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>

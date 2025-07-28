@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kolkata Metro</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="metro-background">
+
+  <header class="header">
+    <span><i class="fas fa-subway"></i></span>
+    <h1>Kolkata Metro Portal</h1>
+    <a href="/logout" class="logout-btn">Logout</a>
+  </header>
+
+  <p style="text-align:center; font-weight:600; margin-top: 10px;">
+    Welcome, {{ user }}
+  </p>
+
+  <main class="left-grid-container">
+    <a href="/book-form" class="tile pink">
+      <div class="icon-circle"><i class="fas fa-ticket-alt"></i></div>
+      <p>Book Ticket</p>
+    </a>
+
+    <a href="/my-bookings" class="tile blue">
+      <div class="icon-circle"><i class="fas fa-list"></i></div>
+      <p>My Bookings</p>
+    </a>
+
+    <a href="/cancel-ticket" class="tile red">
+      <div class="icon-circle"><i class="fas fa-times-circle"></i></div>
+      <p>Cancel Ticket</p>
+    </a>
+
+    <a href="/schedule" class="tile magenta">
+      <div class="icon-circle"><i class="fas fa-clock"></i></div>
+      <p>Metro Schedule</p>
+    </a>
+
+    <a href="/track" class="tile grey">
+      <div class="icon-circle"><i class="fas fa-train"></i></div>
+      <p>Track Metro</p>
+    </a>
+
+    <a href="/route-map" class="tile orange">
+      <div class="icon-circle"><i class="fas fa-map"></i></div>
+      <p>Route Map</p>
+    </a>
+
+    <a href="/support" class="tile green">
+      <div class="icon-circle"><i class="fas fa-phone-volume"></i></div>
+      <p>Customer Support</p>
+    </a>
+
+    <a href="/rules" class="tile yellow">
+      <div class="icon-circle"><i class="fas fa-info-circle"></i></div>
+      <p>Rules & Fares</p>
+    </a>
+
+    <!-- Optional 9th tile -->
+    <a href="#" class="tile dark">
+      <div class="icon-circle"><i class="fas fa-cogs"></i></div>
+      <p>Settings</p>
+    </a>
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
