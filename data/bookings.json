@@ -1,0 +1,155 @@
+[
+  {
+    "from": "Dum Dum",
+    "to": "Kavi Subhash",
+    "ticket_id": "1752318384",
+    "date": "2025-07-12 16:36:24",
+    "fare": "Rs. 30",
+    "status": "confirmed",
+    "qr_path": "/static/qr_codes/1752318384.png"
+  },
+  {
+    "from": "Dum Dum",
+    "to": "Kavi Subhash",
+    "ticket_id": "1752318401",
+    "date": "2025-07-12 16:36:41",
+    "fare": "Rs. 30",
+    "status": "confirmed",
+    "qr_path": "/static/qr_codes/1752318401.png"
+  },
+  {
+    "from": "Dum Dum",
+    "to": "Kavi Subhash",
+    "ticket_id": "1752318411",
+    "date": "2025-07-12 16:36:51",
+    "fare": "Rs. 30",
+    "status": "confirmed",
+    "qr_path": "/static/qr_codes/1752318411.png"
+  },
+  {
+    "from": "Dum Dum",
+    "to": "Kavi Subhash",
+    "ticket_id": "1752319739",
+    "date": "2025-07-12 16:58:59",
+    "fare": "Rs. 30",
+    "status": "confirmed",
+    "qr_path": "/static/qr_codes/1752319739.png"
+  },
+  {
+    "from": "Baranagar",
+    "to": "Maidan",
+    "username": "bittu",
+    "ticket_id": "1752324941",
+    "date": "2025-07-12 18:25:41",
+    "fare": "Rs. 10",
+    "status": "confirmed",
+    "qr_path": "/static/qr_codes/1752324941.png"
+  },
+  {
+    "username": "bittu",
+    "from": "Dakshineswar",
+    "to": "Baranagar",
+    "ticket_id": "1752325492",
+    "date": "2025-07-12 18:34:52",
+    "fare": "Rs. 5",
+    "status": "confirmed",
+    "qr_path": "/static/qr_codes/1752325492.png"
+  },
+  {
+    "username": "bittu",
+    "from": "Baranagar",
+    "to": "MG Road",
+    "ticket_id": "1752325512",
+    "date": "2025-07-12 18:35:12",
+    "fare": "Rs. 5",
+    "status": "confirmed",
+    "qr_path": "/static/qr_codes/1752325512.png"
+  },
+  {
+    "username": "bittu",
+    "from": "Baranagar",
+    "to": "MG Road",
+    "ticket_id": "1752325563",
+    "date": "2025-07-12 18:36:03",
+    "fare": "Rs. 5",
+    "status": "confirmed",
+    "qr_path": "/static/qr_codes/1752325563.png"
+  },
+  {
+    "username": "bittu",
+    "from": "Dakshineswar",
+    "to": "Shyambazar",
+    "payment_method": "UPI",
+    "ticket_id": "1752327756",
+    "date": "2025-07-12 19:12:36",
+    "fare": "Rs. 5",
+    "status": "confirmed",
+    "qr_path": "/static/qr_codes/1752327756.png"
+  },
+  {
+    "username": "bittu",
+    "from": "Dakshineswar",
+    "to": "Belgachia",
+    "payment_method": "UPI",
+    "ticket_id": "1752328148",
+    "date": "2025-07-12 19:19:08",
+    "fare": "Rs. 5",
+    "status": "confirmed",
+    "qr_path": "/static/qr_codes/1752328148.png"
+  },
+  {
+    "username": "bittu",
+    "from": "Dakshineswar",
+    "to": "Baranagar",
+    "payment_method": "UPI",
+    "ticket_id": "1752330004",
+    "date": "2025-07-12 19:50:04",
+    "fare": "Rs. 5",
+    "status": "confirmed",
+    "qr_path": "/static/qr_codes/1752330004.png"
+  },
+  {
+    "username": "bittu",
+    "from": "Baranagar",
+    "to": "Jatin Das Park",
+    "payment_method": "UPI",
+    "ticket_id": "1752407138",
+    "date": "2025-07-13 17:15:38",
+    "fare": "Rs. 20",
+    "status": "confirmed",
+    "qr_path": "/static/qr_codes/1752407138.png"
+  },
+  {
+    "username": "bittu",
+    "from": "Belgachia",
+    "to": "Netaji Bhavan",
+    "payment_method": "UPI",
+    "ticket_id": "1752409759",
+    "date": "2025-07-13 17:59:19",
+    "fare": "Rs. 10",
+    "status": "confirmed",
+    "qr_path": "/static/qr_codes/1752409759.png"
+  },
+  {
+    "username": "anonymous",
+    "from": "Dakshineswar",
+    "to": "Kavi Nazrul",
+    "payment_method": "UPI",
+    "ticket_id": "1752427655",
+    "date": "2025-07-13 22:57:35",
+    "fare": "Rs. 30",
+    "status": "confirmed",
+    "qr_path": "/static/qr_codes/1752427655.png"
+  },
+  {
+    "username": "baban",
+    "from": "Dakshineswar",
+    "to": "Kavi Subhash",
+    "payment_method": "UPI",
+    "ticket_id": "1753281175",
+    "date": "2025-07-23 20:02:55",
+    "fare": "Rs. 30",
+    "status": "confirmed",
+    "qr_path": "/static/qr_codes/1753281175.png"
+  }
+]
